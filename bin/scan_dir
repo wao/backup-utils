@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+#vim:ft=ruby
+
+require 'find'
+require 'pathname'
+
+class DirDesc
+  def initialize(register, path)
+    @register = register
+    if path.is_a? Pathname
+      @path = path
+    else
+      @path = Pathname.new(path) 
+    end
+
+    @register.register(path, :known)
+  end
+
+  def dir(path)
+    
+  end
+end
